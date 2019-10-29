@@ -1,0 +1,15 @@
+a.item {
+    padding: 150px;
+    background-color: lightblue;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 300px;
+}
+
+a.item:hover {
+    background-color: blue;
+    color: white;
+}

@@ -1,0 +1,80 @@
+.profile {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%!important;
+    border: 1px solid #bd5d38;
+}
+
+.profile img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%!important;
+    border: .5rem solid #bd5d38;
+}
+
+.mood img {
+    height: 300px;
+    width: 300px;
+}
+
+div.name {
+    font-family: 'Saira Extra Condensed', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #343a40;
+    margin: auto;
+}
+
+.name-primary {
+    color: #bd5d38 !important;
+}
+
+.header {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Saira Extra Condensed', serif;
+    font-size: 1.35rem;
+}
+
+.header a {
+    color: #bd5d38;
+    text-decoration: none;
+    background: transparent;
+}
+
+h1 {
+    font-size: 6rem;
+    line-height: 5.5rem;
+}
+
+section {
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 2em;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.information {
+    margin-left: 3em;
+    width: 100%;
+}
+
+.information ul,
+.information ol {
+    font-family: 'Saira Extra Condensed', serif;
+}
+
+ul .code,
+ol .code {
+    color: #bd5d38;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.mr10 {
+    margin-right: 10px;
+}
