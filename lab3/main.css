@@ -1,3 +1,65 @@
+.grid-container {
+    display: grid;
+    grid-template-areas: 'item1 item2 item3' 'item1 item4 item5';
+    grid-gap: 5px;
+}
+
+.item {
+    position: relative;
+}
+
+.item1 {
+    grid-area: item1;
+}
+
+.item2 {
+    grid-area: item2;
+}
+
+.item3 {
+    grid-area: item3;
+}
+
+.item4 {
+    grid-area: item4;
+}
+
+.item5 {
+    grid-area: item5;
+}
+
+.grid-container .image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.grid-container .content {
+    position: absolute;
+    width: 100%;
+    padding-top: 8%;
+    background-color: transparent;
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    z-index: 100;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.grid-container .content h1 {
+    padding-left: 10px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.grid-container .content p {
+    padding-left: 10px;
+    color: #d3d3d3;
+    font-size: 1rem;
+    line-height: 22px;
+}
+
 table {
     border-collapse: collapse;
 }
@@ -5,4 +67,8 @@ table {
 table th,
 table td {
     border: 1px solid black;
+}
+
+div+p {
+    background-color: blue;
 }
