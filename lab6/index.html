@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lab 6</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body class="container">
+    <div>
+        <header>
+            <h1>Hello Javascript();</h1>
+            <span id="time"></span>
+        </header>
+    </div>
+    <section>
+        <form method="POST" id="studentForm" onsubmit="return false;">
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="sid">Student Id</label>
+                    <input type="text" name="sid" id="sid" placeholder="000-XX-XXXX" required
+                        pattern="\d{3}-\d{2}-\d{4}" title="Please use valid format 000-XX-XXXX">
+                    <small>Your unique student Identification number</small>
+                </div>
+                <div class="col-md-12">
+                    <label for="name">First Name</label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+            </div>
+            <button id="submitBtn">Submit</button>
+        </form>
+        <section style="margin-top: 40px;">
+            <h2>Student Names</h2>
+            <ul id="studentlist" class="list-group"></ul>
+        </section>
+    </section>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
