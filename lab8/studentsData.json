@@ -1,0 +1,14 @@
+[
+    {
+        "studentId": "000-98-0001",
+        "firstName": "James"
+    },
+    {
+        "studentId": "000-98-0002",
+        "firstName": "Anna"
+    },
+    {
+        "studentId": "000-98-0003",
+        "firstName": "Jeffrey"
+    }
+]
