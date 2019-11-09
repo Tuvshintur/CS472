@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        (function () {
+            const account = (function () {
+                let accountNumber = '';
+                let accountType = '';
+                let balance = 0.0;
+                let status = '';
+                function create(newAccountNumber, newAccountType, newBalance, newStatus) {
+                    accountNumber = newAccountNumber;
+                    accountType = newAccountType;
+                    balance = newBalance;
+                    status = newStatus;
+
+                    console.log("New Account, " + accountNumber + ", created succesfully");
+                }
+                function toString() {
+                    return {
+                        accountNumber: accountNumber,
+                        accountType: accountType,
+                        balance: balance,
+                        status: status
+                    }
+                }
+
+                return {
+                    getAccountNumber: function () { return accountNumber },
+                    getAccountType: function () { return accountType },
+                    getBalance: function () { return balance },
+                    getAccountStatus: function () { return status },
+                    setAccountStatus: function (newStatus) { status = newStatus; },
+                    create: create,
+                    toString: toString
+                }
+
+            })();
+            account.create('AC-0001', 'checking', 10000, 'Active');
+            console.log(account.getAccountNumber());
+            console.log(account.getAccountType());
+            console.log(account.getBalance());
+            console.log(account.getAccountStatus());
+
+            account.setAccountStatus('Inactive');
+
+            console.log(account.getAccountStatus());
+            
+            console.log(account.toString());
+        })();
+    </script>
+</body>
+
+</html>

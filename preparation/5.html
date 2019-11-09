@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        (function () {
+            const account = {
+                accountNumber: '',
+                accountType: '',
+                balance: 0.0,
+                status: '',
+                create: function (newAccountNumber, newAccountType, newBalance, newStatus) {
+                    accountNumber = newAccountNumber;
+                    accountType = newAccountType;
+                    balance = newBalance;
+                    status = newStatus;
+
+                    console.log("New Account, " + accountNumber + ", created succesfully");
+                },
+                toString: function () {
+                    return {
+                        accountNumber: accountNumber,
+                        accountType: accountType,
+                        balance: balance,
+                        status: status
+                    }
+                }
+            }
+
+            account.create('AC-0001', 'checking', 10000, 'Active');
+            console.log(account.toString());
+        })();
+    </script>
+</body>
+
+</html>

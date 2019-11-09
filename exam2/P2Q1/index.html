@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mini Banking App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class=" container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">CS472:::MiniBanking App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            </div>
+        </nav>
+
+        <h2>Bank Account Form</h2>
+        <form>
+            <fieldset>
+                <div class="form-group">
+                    <label for="accountNumber">Account No</label>
+                    <input type="text" class="form-control" id="accountNumber" aria-describedby="accountNumberHelp"
+                        placeholder="01-XXX-XXXX" pattern="0\d{1}-\d{3}-\d{4}" required />
+                    <small id="accountNumberHelp" class="form-text text-muted">Your unique account number.</small>
+                </div>
+                <div class="form-group">
+                    <label for="customerName">Customer Name</label>
+                    <input type="text" class="form-control" id="customerName" placeholder="e.g. John B.Smith"
+                        required />
+                </div>
+                <div class="form-group">
+                    <label for="accountType">Customer Name</label>
+                    <select type="text" class="form-control" id="accountType" required>
+                        <option value="">Select account type</option>
+                        <option value="Checking">Checking</option>
+                        <option value="Savings">Savings</option>
+                        <option value="Loan">Loan</option>
+                    </select>
+                </div>
+                <button id="btnSubmit" type="submit" class="btn btn-primary">Create New Account</button>
+            </fieldset>
+        </form>
+        <ul id="listAccounts" class="list-group" style="margin-top:40px;">
+            <li class="list-group-item active">List of Customer Accounts</li>
+        </ul>
+    </div>
+    <footer class="page-footer font-small bg-light">
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href="/">CS472 Bank ::: WAP</a>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+[
+    {
+        "accountNumber": "01-980-0001",
+        "customerName": "James H. Karvell",
+        "accountType": "Savings"
+    },
+    {
+        "accountNumber": "01-980-0002",
+        "customerName": "Anna Hernandez-Diaz",
+        "accountType": "Checking"
+    }
+]

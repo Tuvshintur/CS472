@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        (function () {
+            const account = {
+                accountNumber: '',
+                accountType: '',
+                balance: 0.0,
+                status: '',
+                create: function (newAccountNumber, newAccountType, newBalance, newStatus) {
+                    accountNumber = newAccountNumber;
+                    accountType = newAccountType;
+                    balance = newBalance;
+                    status = newStatus;
+
+                    console.log("New Account, " + accountNumber + ", created succesfully");
+                },
+                setAccountNumber: function (accountNumber) {
+                    this.accountNumber = accountNumber;
+                },
+                setAccountType: function (accountType) {
+                    this.accountType = accountType;
+                },
+                setBalance: function (balance) {
+                    this.balance = balance;
+                },
+                setStatus: function (status) {
+                    this.status = status;
+                },
+                toString: function () {
+                    return {
+                        accountNumber: this.accountNumber,
+                        accountType: this.accountType,
+                        balance: this.balance.toFixed(2),
+                        status: this.status
+                    }
+                }
+            }
+
+            let tomsCheckingAccount = Object.create(account);
+            tomsCheckingAccount.setAccountNumber('AC-0099');
+            tomsCheckingAccount.setAccountType('Checking');
+            tomsCheckingAccount.setBalance(16595.99);
+            tomsCheckingAccount.setStatus('Open');
+            tomsCheckingAccount.payFees = function (fee) {
+                this.balance -= fee;
+            }
+
+            console.log(tomsCheckingAccount);
+
+            tomsCheckingAccount.payFees(1000);
+
+            console.log(tomsCheckingAccount.toString());
+        })();
+    </script>
+</body>
+
+</html>

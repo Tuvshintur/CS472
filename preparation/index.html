@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //IIFE Pattern- Immediately Invoked Function Expression
+        (function (parameter) {
+            console.log('I\'m IIFE ' + parameter);
+        })(1);
+
+        (function (parameter) {
+            console.log('I\'m IIFE alternative ' + parameter);
+        }(1));
+
+        //Module pattern
+        var counter = (function () {
+            var privateCounter = 0;//private data
+            function changeBy(val) {//private inner function
+                privateCounter += val;
+            }
+            return {
+                increment: function () { changeBy(1) },
+                decrement: function () { changeBy(-1) },
+                value: function () { return privateCounter },
+                pub: 5 //example of public property
+            }
+        })();
+
+        counter.increment();
+        counter.increment();
+        counter.increment();
+        console.log(counter.value());
+        counter.decrement();
+        console.log(counter.value());
+        console.log(counter.pub);
+
+        //Revealing Module Pattern
+        var module = (function () {
+            function private1() { console.log('private1'); }
+            function private2() { console.log('private2'); }
+
+            return {
+                public1: private1,
+                public2: private2
+            }
+        })();
+
+        //inheritance with call() bind() apply()
+        var me = {
+            first: 'firstName',
+            last: 'lastName',
+            getFullName: function () {
+                return this.first + ' ' + this.last;
+            }
+        }
+
+        var log = function (height, weight) {//this refers to the invoker
+            console.log(this.getFullName() + height + weight);
+        }
+
+        log.call(me, ' 180cm', ' 70kg');//firstName LastName 180cm 70kg
+        log.apply(me, [' 180cm', ' 70kg']);//firstName LastName 180cm 70kg
+
+        var logMe = log.bind(me);
+        logMe(' 180cm');//firstName LastName 180cm undefined
+
+        logMe = log.bind(me, ' 180cm');
+        logMe(' 70kg');//firstName LastName 180cm 70kg
+        //In short
+        (function (height, weight) {
+            console.log(this.getFullName() + height + weight);
+        }).apply(me, [' 180cm', ' 70kg']);
+
+        //Function Borrowing
+        var you = {
+            first: 'myFirst',
+            last: 'myLast'
+        }
+        console.log(me.getFullName.apply(you));//myFirst myLast 
+
+        //Function Currying
+        function multiply(a, b) {
+            return a * b;
+        }
+        var multiplyTwo = multiply.bind({}, 2);// set a=2
+        console.log(multiplyTwo(4));//returns 8
+        var multiplyThree = multiply.bind({}, 3); //set a = 3
+        console.log(multiplyThree(4));//returns 12
+
+        //Object create - inheritance
+        var person = {
+            first: 'Default',
+            last: 'Default',
+            greet: function () { return 'Hi, ' + this.first }
+        }
+
+        var turuu = Object.create(person);
+        console.log(turuu['first']);//Default
+        console.log(turuu.hasOwnProperty('first'));//false
+        turuu.first = 'turuu';
+        console.log(turuu.hasOwnProperty('first'));//true
+        console.log(turuu.greet());//Hi, turuu
+
+        //Function constructors - inheritance
+        function Person() {
+            console.log(this);
+            var year = '2019';
+            this.university = 'MUM';
+            return this;//optional
+        }
+
+        var faculty = new Person();//person only with university
+
+        Person.prototype.greet = function () {
+            return 'Hi, ' + this.university;
+        }
+
+        console.log(faculty.greet());//Hi, MUM
+
+        //Example to see scopes
+        window.onload = function () {
+            var x = 1;
+            function add() {
+                var counter = 0;
+                var summ = function () {
+                    var multiply = 2;
+                    counter += 1;
+                    counter *= multiply;
+                    console.log("inside summ", counter);
+                    console.log(x);
+                };
+                counter = 15;
+                x = 10;
+                return summ;
+            }
+
+            var add_test = add();
+
+            add_test();
+            add_test();
+
+
+            console.dir(add_test);
+        }
+    </script>
+</body>
+
+</html>
