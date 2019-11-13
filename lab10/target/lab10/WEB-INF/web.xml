@@ -1,7 +1,52 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
+    <filter>
+        <filter-name>myFilter1</filter-name>
+        <filter-class>MyFilter</filter-class>
+        <init-param>
+            <param-name>count</param-name>
+            <param-value>0</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>myFilter1</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>HelloServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ContactServlet</servlet-name>
+        <servlet-class>ContactServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ValidationServlet</servlet-name>
+        <servlet-class>ValidationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ThankyouServlet</servlet-name>
+        <servlet-class>ThankyouServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ContactServlet</servlet-name>
+        <url-pattern>/contact</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValidationServlet</servlet-name>
+        <url-pattern>/validation</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ThankyouServlet</servlet-name>
+        <url-pattern>/thankyou</url-pattern>
+    </servlet-mapping>
 </web-app>
