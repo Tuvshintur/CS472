@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+
+    <description>My CS472-WAP Custom JSP Core Tags library</description>
+    <display-name>CS472-WAP core tags</display-name>
+    <tlib-version>1.1</tlib-version>
+    <short-name>ct</short-name>
+    <uri>http://cs.mum.edu/cs472/jsp/custom/core</uri>
+
+    <tag>
+        <description>
+            Prints the current Date, formatted and styled with the specified color and font-size.
+        </description>
+        <name>currDate</name>
+        <tag-class>edu.mum.cs.cs472.lab12.customjsptags.core.CurrDateTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <description>
+                String representing the foreground color to use to style the current date value to be printed.
+            </description>
+            <name>color</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description>
+                String representing the font-size to use to style the current date value to be printed.
+            </description>
+            <name>size</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <description>
+            Prints the current Time, formatted and styled with the specified color and font-size.
+        </description>
+        <name>currTime</name>
+        <tag-class>edu.mum.cs.cs472.lab12.customjsptags.core.CurrTimeTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <description>
+                String representing the foreground color to use to style the current time value to be printed.
+            </description>
+            <name>color</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description>
+                String representing the font-size to use to style the current time value to be printed.
+            </description>
+            <name>size</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+</taglib>
